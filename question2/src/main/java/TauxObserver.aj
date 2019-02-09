@@ -18,4 +18,10 @@ public aspect TauxObserver extends ObserverProtocol {
         Client client = banque.getClient(addedClientId);
         TauxObserver.aspectOf().addObserver((Subject) banque, (Observer) client);
     }
+
+    after (Banque banque): target(banque) && call(void removeClient(..)) {
+        int removedClientId = banque.getNbAnciensClients() - 1;
+        Client client = banque.getAncienClient(removedClientId);
+        TauxObserver.aspectOf().removeObserver((Subject) banque, (Observer) client);
+    }
 }

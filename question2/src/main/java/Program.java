@@ -9,5 +9,8 @@ public class Program {
         banque.addClient(client2);
         banque.addClient(client3);
         banque.setTauxLivretA(0.75);
+
+        banque.removeClient(client2);
+        banque.setTauxLivretA(0.90);
     }
 }

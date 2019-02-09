@@ -19,10 +19,10 @@ public abstract aspect ObserverProtocol {
         }
         return observers;
     }
-    public void addObserver(Subject s, Observer o){
+    public void addObserver(Subject s, Observer o) {
         getObservers(s).add(o);
     }
-    public void removeObserver(Subject s, Observer o){
+    public void removeObserver(Subject s, Observer o) {
         getObservers(s).remove(o);
     }
 
